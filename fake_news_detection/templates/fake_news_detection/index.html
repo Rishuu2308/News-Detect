@@ -1,0 +1,23 @@
+{% extends 'fake_news_detection/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block form %}
+    <form method="" action="{% url 'result' %}" autocomplete="off" style="{% static 'styles.css' %}">
+        {% csrf_token %}
+
+        {{ form.newspaper|as_crispy_field }}
+        <br>
+
+        {{ form.category|as_crispy_field }}
+        <br>
+
+        {{ form.news_text|as_crispy_field }}
+        <br>
+
+        <button class="btn waves-effect waves-light btn" style="width: 100%;" type="submit" name="action">FACT-CHECK
+            <i class="material-icons right">mood</i>
+        </button>
+    </form>
+
+{% endblock form %}

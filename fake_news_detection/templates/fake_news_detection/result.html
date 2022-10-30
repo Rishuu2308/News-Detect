@@ -1,0 +1,39 @@
+{% extends 'fake_news_detection/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block form %}
+{% endblock form %}
+
+{% block content %}
+
+  <center>
+  <h2>We believe that news article from {{form_params.newspaper}} could be potentially</h2>
+  
+  {% if ans == 'Real' %}
+    <strong style="font-size: 10rem; color: green;">{{ans}}</strong>
+
+  {% else %}
+    <strong style="font-size: 10rem; color: red;">{{ans}}</strong>
+  
+  {% endif %}
+  
+  </center>
+  
+  <p>Check the next checkbox if you're happy with your results.</p>
+
+  <form action="{% url 'satisfaction' %}">
+    {% csrf_token %}
+
+    <p>
+      <label>
+        <input type="checkbox" name="user_choice" />
+        <span>I think the prediction was accurate.</span>
+      </label>
+    </p>
+
+    <button class="btn waves-effect waves-light btn" style="width: 100%;" type="submit" name="submit_button">SUBMIT FEEDBACK
+        <i class="material-icons right">send</i>
+    </button>
+  </form>
+{% endblock content %}

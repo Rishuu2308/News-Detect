@@ -1,0 +1,144 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="{% static 'fake_news_detection/styles.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>Fake News Detection</title>
+        <style>
+            .carousel-item img{
+              height:500px;
+              width:200px;
+            }
+            body,
+		        html {
+			        margin: 0;
+			        padding: 0;
+			        height: 100%;
+			        background-color:darkslateblue;
+		}
+            .container{
+              margin-top:10px;
+            }
+          </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg active" style="background-color: black; font-weight: bolder;">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">News_Detection</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/paytm">Payment</a>
+                 </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="mx-2">
+                  <span> Hello,{{request.user}}</span>
+                  <button class="btn btn-danger"><a href="{% url 'logout' %}">Logout</a></button>
+              </div>
+            </div>
+        </nav>
+        <div class="container">
+            <h1 style="text-align: center;">The fake news detector you didn't know you needed.</h1>
+            
+        
+            <div class="container my-4">
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                          <strong class="d-inline-block mb-2 text-primary">World</strong>
+                          <h3 class="mb-0">Global Conferences</h3>
+                          <div class="mb-1 text-muted">Nov 12</div>
+                          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                          <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                          {% comment %} <img class="bd-placeholder-img" width="200" height="250" src="thumb1.jpg" alt=""> {% endcomment %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                          <strong class="d-inline-block mb-2 text-success">Design</strong>
+                          <h3 class="mb-0">Learn Designing</h3>
+                          <div class="mb-1 text-muted">Nov 11</div>
+                          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                          <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            {% comment %} <img class="bd-placeholder-img" width="200" height="250" src="https://source.unsplash.com/500x700/?tech,code,laptop" alt=""> {% endcomment %}
+        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                          <strong class="d-inline-block mb-2 text-danger">FrontEnd</strong>
+                          <h3 class="mb-0">Bootstrap Templates</h3>
+                          <div class="mb-1 text-muted">Nov 12</div>
+                          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                          <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                          {% comment %} <img class="bd-placeholder-img" width="200" height="250" src="thumb2.jpg" alt=""> {% endcomment %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                          <strong class="d-inline-block mb-2 text-warning">Python</strong>
+                          <h3 class="mb-0">Learn Python</h3>
+                          <div class="mb-1 text-muted">Nov 11</div>
+                          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                          <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            {% comment %} <img class="bd-placeholder-img" width="200" height="250" src="thumb3.jpg" alt=""> {% endcomment %}
+        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+           
+            {%  block form %}
+            {% endblock form %}
+            
+            <!--Inheritance of the full code-->
+            {% block content %}
+            {% endblock content %}
+            <footer class="container">
+                <p class="float-right"><a href="#">Back to top</a></p>
+                <p>© 2020-2021 iCoder, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+            </footer>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        </div> 
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    </body>
+</html>

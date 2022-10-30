@@ -1,0 +1,88 @@
+ <!doctype html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>Fake News Detection</title>
+        <style>
+            .carousel-item img{
+              height:500px;
+              width:200px;
+            }
+            body,
+		        html {
+			        margin: 0;
+			        padding: 0;
+			        height: 100%;
+			        background-color:darkslateblue;
+        
+		}           
+            .container{
+              margin-top:10px;
+            }
+          </style>
+    </head>
+    <body>
+        <div class="tex">
+        <nav class="navbar navbar-expand-lg active" style="background-color: black; font-weight: bolder;">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">Payment</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+                 <div class="mx-2">
+                  <span> Hello,{{request.user}}</span>
+                  <button class="btn btn-danger"><a href="{% url 'logout' %}">Logout</a></button>
+              </div> 
+            </div>
+        </nav>
+        <div class="container my-4">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Select your Query</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Web</option>
+                        <option>Tech Stack</option>
+                        <option>Technology</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+              
+    
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" style="font-size: 20px;">Tell us about yourself</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea2" style="font-size: 20px;">Elaborate Your Concern</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+    
+        </div>
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>© 2020-2021 iCoder, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </div>
+    </body>
+    </html> 
